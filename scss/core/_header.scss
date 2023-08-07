@@ -8,6 +8,8 @@
   position: fixed;
   // @include transistion;
   @include disflex;
+
+  transition: var(--time-duration) background;
   background: linear-gradient(
     180deg,
     var(--black-cl) 0%,
@@ -113,6 +115,12 @@
         @include disflex;
         cursor: pointer;
         gap: 4px;
+        .current__arrow {
+          @include transistion;
+          &.--toggle {
+            transform: rotate(-180deg);
+          }
+        }
       }
 
       @include sm {

@@ -73,7 +73,7 @@
     --button-height: 34px;
 
     --fs-h1: 56px;
-    --lh-h1: normal;
+    --lh-h1: 50px;
 
     --fs-h2: 38px;
     --lh-h2: 42px;
@@ -111,20 +111,6 @@
       margin-top: 0;
     }
   }
-
-  // @keyframes bthLearnmoresplit {
-  //   0% {
-  //     transform: translateX(0%);
-  //   }
-
-  //   50% {
-  //     transform: translateX(60%);
-  //   }
-
-  //   100% {
-  //     transform: translateX(0%);
-  //   }
-  // }
 
   @keyframes hoverMenuHeader {
     0% {

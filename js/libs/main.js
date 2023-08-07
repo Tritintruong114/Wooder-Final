@@ -30,9 +30,28 @@ window.addEventListener("scroll", () => {
 //Loading screen
 
 //Slick
+let i = 0;
 window.onload = function () {
-  document.querySelector(".loading").classList.add("--hiden");
-  console.log("Loaded");
+  if (i == 0) {
+    i = 1;
+    let progress = document.querySelector(".loading__bar-inside");
+    let percent = document.querySelector(".loading__percent");
+    let width = 10;
+    const frame = () => {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+        document.querySelector(".loading").classList.add("--hiden");
+      } else {
+        width++;
+        progress.style.width = width + "%";
+        percent.textContent = width + "%";
+      }
+    };
+    let id = setInterval(frame, 20);
+  }
+  // document.querySelector(".loading").classList.add("--hiden");
+
   //Slider on Gallery Bottom
   $(".scbottomlist__slider").slick({
     infinite: true,
@@ -117,9 +136,20 @@ const getList = document.querySelectorAll(".select li");
 const dropDown = document.querySelector(".select");
 const lang = document.getElementById("#lang");
 const turnOff = document.querySelector(".header__lang-current");
+const arrow = document.querySelector(".current__arrow");
 
 turnOff.addEventListener("click", (e) => {
+  e.stopPropagation();
+  arrow.classList.toggle("--toggle");
   dropDown.classList.toggle("--hiden");
+});
+
+document.addEventListener("click", () => {
+  if (dropDown.classList.contains("--hiden")) {
+    return;
+  }
+  dropDown.classList.remove("--hiden");
+  // dropDown.classList.remove("--hiden");
 });
 
 const myFunction = (item, index) => {
@@ -172,3 +202,25 @@ showVideo.forEach(function (item) {
     `;
   });
 });
+
+// LOading screen
+
+// const move = () => {
+//   if (i == 0) {
+//     i = 1;
+//     let progress = document.querySelector(".loading__bar-inside");
+//     let percent = document.querySelector(".loading__percent");
+//     let width = 10;
+//     let id = setInterval(frame, 10);
+//     const frame = () => {
+//       if (width >= 100) {
+//         clearInterval(id);
+//         i = 0;
+//       } else {
+//         width++;
+//         progress.style.width = width + "%";
+//         percent.innerHTML = width + "%";
+//       }
+//     };
+//   }
+// };

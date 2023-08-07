@@ -308,10 +308,10 @@ sup {
     color: white;
     @include centerAbs;
     z-index: 3;
-    top: -10px;
-    left: 30px;
+    top: 20px;
+    // left: 30px;
     @include transistion;
-    animation: logoSlide 4s;
+    // animation: logoSlide 4s;
   }
   &.--hiden {
     opacity: 0;
