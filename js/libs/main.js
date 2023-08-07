@@ -42,6 +42,73 @@ window.onload = function () {
         clearInterval(id);
         i = 0;
         document.querySelector(".loading").classList.add("--hiden");
+        $(".scbottomlist__slider").slick({
+          infinite: true,
+          speed: 150,
+          slidesToShow: 1,
+          variableWidth: true,
+          autoplay: true,
+          dots: false,
+          arrows: false,
+        });
+        $(".scbottomlist").on(
+          "init reInit afterChange",
+          function (event, slick, currentSlide) {
+            const exChangeToPercent =
+              (slick.currentSlide / slick.slideCount) * 100 + 10;
+            const numSlides = `${exChangeToPercent}%`;
+            document.querySelector(".scbottomlist__progress-bar").style.width =
+              numSlides;
+          }
+        );
+
+        //Slider on SC Hero
+        $(".slider__item-background").slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplaySpeed: 1500,
+          autoplay: true,
+          dots: true,
+          appendDots: $(".slick-slider-dots"),
+          prevArrow: true,
+          nextArrow: true,
+
+          //asNavFor to Sync 2 slider
+          asNavFor: ".--title-slider",
+        });
+        $(".--title-slider").slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplaySpeed: 1500,
+          autoplay: true,
+          dots: false,
+          arrows: false,
+
+          //asNavFor to Sync 2 slider
+          asNavFor: ".slider__item-background",
+        });
+        $(".slick-next").click(function (e) {
+          //e.preventDefault();
+          $(".slider__item-background").slick("slickPrev");
+        });
+
+        $(".slick-prev").click(function (e) {
+          //e.preventDefault();
+          $(".slider__item-background").slick("slickNext");
+        });
+
+        $(".slider__item-background").on(
+          "init reInit afterChange",
+          function (event, slick, currentSlide, nextSlide) {
+            if (!slick.$dots) {
+              return;
+            }
+            let i = (currentSlide ? currentSlide : 0) + 1;
+
+            slideCount.innerHTML = "";
+            slideCount.innerHTML = `0${i}/0${slick.$dots[0].children.length}`;
+          }
+        );
       } else {
         width++;
         progress.style.width = width + "%";
@@ -53,73 +120,7 @@ window.onload = function () {
   // document.querySelector(".loading").classList.add("--hiden");
 
   //Slider on Gallery Bottom
-  $(".scbottomlist__slider").slick({
-    infinite: true,
-    speed: 150,
-    slidesToShow: 1,
-    variableWidth: true,
-    autoplay: true,
-    dots: false,
-    arrows: false,
-  });
-  $(".scbottomlist").on(
-    "init reInit afterChange",
-    function (event, slick, currentSlide) {
-      const exChangeToPercent =
-        (slick.currentSlide / slick.slideCount) * 100 + 10;
-      const numSlides = `${exChangeToPercent}%`;
-      document.querySelector(".scbottomlist__progress-bar").style.width =
-        numSlides;
-    }
-  );
-
-  //Slider on SC Hero
-  $(".slider__item-background").slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplaySpeed: 1500,
-    autoplay: true,
-    dots: true,
-    appendDots: $(".slick-slider-dots"),
-    prevArrow: true,
-    nextArrow: true,
-
-    //asNavFor to Sync 2 slider
-    asNavFor: ".--title-slider",
-  });
-  $(".--title-slider").slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplaySpeed: 1500,
-    autoplay: true,
-    dots: false,
-    arrows: false,
-
-    //asNavFor to Sync 2 slider
-    asNavFor: ".slider__item-background",
-  });
-  $(".slick-next").click(function (e) {
-    //e.preventDefault();
-    $(".slider__item-background").slick("slickPrev");
-  });
-
-  $(".slick-prev").click(function (e) {
-    //e.preventDefault();
-    $(".slider__item-background").slick("slickNext");
-  });
-
-  $(".slider__item-background").on(
-    "init reInit afterChange",
-    function (event, slick, currentSlide, nextSlide) {
-      if (!slick.$dots) {
-        return;
-      }
-      let i = (currentSlide ? currentSlide : 0) + 1;
-
-      slideCount.innerHTML = "";
-      slideCount.innerHTML = `0${i}/0${slick.$dots[0].children.length}`;
-    }
-  );
+  
 };
 
 //Back to top button

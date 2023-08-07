@@ -309,8 +309,8 @@ sup {
     @include centerAbs;
     z-index: 3;
     top: 20px;
-    // left: 30px;
     @include transistion;
+    // left: 30px;
     // animation: logoSlide 4s;
   }
   &.--hiden {
