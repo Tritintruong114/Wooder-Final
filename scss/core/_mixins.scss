@@ -1,0 +1,115 @@
+@mixin disbet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin disflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin displayEndBet {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+@mixin displayStartBet {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+@mixin transistion {
+  transition: var(--time-duration);
+  -webkit-transition: var(--time-duration);
+  -o-transition: var(--time-duration);
+}
+
+@mixin --yellow($direction) {
+  background: var(--darkYellow-cl);
+  width: 58px;
+  height: 5px;
+  content: "";
+  display: block;
+
+  @if ($direction == "left") {
+    position: absolute;
+    left: 0;
+    top: 23px;
+  } @else if($direction == "right") {
+    position: absolute;
+    right: 0;
+    top: 23px;
+  } @else if($direction == "bottom") {
+    position: absolute;
+    bottom: -12px;
+    margin: auto;
+  }
+}
+
+@mixin textAlign($direction) {
+  @if ($direction == "right") {
+    text-align: right;
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+  } @else if($direction == "left") {
+    text-align: left;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@mixin dots($num: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Center absoluteP
+@mixin centerAbs {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+//Desktop
+@mixin lg {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+//Tablet
+@mixin sm {
+  @media screen and (max-width: 991.98px) {
+    @content;
+  }
+}
+
+//Mobile
+@mixin xs {
+  @media screen and (max-width: 767.98px) {
+    @content;
+  }
+}
+@mixin xxs {
+  @media screen and (max-width: 575.98px) {
+    @content;
+  }
+}
+
+@mixin xxxs {
+  @media screen and (max-width: 375.98px) {
+    @content;
+  }
+}

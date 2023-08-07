@@ -1,0 +1,11 @@
+
+video gắn 1 ID youtube , khi bấm vào mỗi video lấy ra id 
+gắn attribute
+
+ khung 16/9 ✔
+
+DIV trống , gắn iframe vào
+
+Playicon truyền ID gắn cứng vào
+
+Làm sạch iframe bằng innerHTML , parse vào innerHTML

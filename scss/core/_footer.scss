@@ -1,0 +1,90 @@
+.footer {
+  background: var(--black-cl);
+  width: 100vw;
+  @include disflex;
+  padding: 29px 0;
+  position: relative;
+  .container {
+    @include disbet;
+    position: relative;
+    min-height: 38px;
+
+    .footer__logo {
+      display: flex;
+      @include centerAbs;
+    }
+
+    .footer__copyright {
+      opacity: 0.5;
+      font-family: pr;
+      color: var(--white-cl);
+    }
+
+    .footer__totopbtn {
+      @include disflex;
+      cursor: pointer;
+      position: relative;
+      z-index: 3;
+      width: 35px;
+      height: 35px;
+      flex-shrink: 0;
+      opacity: 0;
+      pointer-events: none;
+      border: 1px solid var(--white-cl);
+      background: var(--gray-cl);
+      @include transistion;
+
+      .progressbar {
+        width: 100%;
+        // height: 50%;
+        top: 0;
+        background: var(--gray-cl);
+        position: absolute;
+        @include transistion;
+        &:hover {
+          background: var(--darkYellow-cl);
+        }
+        @include md {
+          background: var(--darkYellow-cl);
+        }
+      }
+
+      svg {
+        z-index: 3;
+      }
+
+      @include md {
+        position: fixed;
+        bottom: 35px;
+      }
+
+      &.showButton {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    @include md {
+      justify-content: end;
+
+      .footer__copyright,
+      .footer__logo {
+        display: none;
+      }
+
+      .footer__res {
+        @include disflex;
+        flex-direction: column;
+        gap: 8px;
+        color: var(--white-cl);
+        @include centerAbs;
+
+        .footer__copyright-res {
+          opacity: 0.5;
+          font-family: pr;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

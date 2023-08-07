@@ -1,0 +1,172 @@
+:root {
+  --time-duration: 0.4s;
+  --cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);
+
+  //Gap
+  --gap: 28px;
+
+  //Columms
+  --grid-columns: repeat(12, 1fr);
+  --grid-columns-span: 1 / span 12;
+
+  //Colors
+  --darkYellow-cl: #bea67c;
+  --white-cl: #ffffff;
+  --black-cl: #000000;
+  --gray-cl: #464646;
+
+  //Height
+  --header-height: 90px;
+  --button-height: 44px;
+
+  //Font-size - Desktop
+  --fs-h1: 84px;
+  --lh-h1: normal;
+
+  --fs-h2: 46px;
+  --lh-h2: 56px;
+
+  --fs-h3: 18px;
+  --lh-h3: 24px;
+
+  --fs-textbutton: 15px;
+  --lh-textbutton: normal;
+
+  --fs-bodytext: 18px;
+  --lh-bodytext: 25px;
+
+  --fs-bodytextsm: 14px;
+  --lh-bodytextsm: normal;
+
+  --fs-nav: 22px;
+  --lh-nav: 1.72px;
+  //Width
+  --buttonNextPrevWidth: 60px;
+
+  //Max-width
+  --body-maxwidth: 2560px;
+  --container-fluid-maxwidth: 1920px;
+  --container-maxwidth: calc(1196px + calc(var(--gap) * 2));
+
+  //Padding
+  --container-padding: 28px;
+  --section-padding: 120px;
+
+  //Responsive
+  @include md {
+    --container-max-width: 1140px;
+  }
+
+  //Tablet
+  @include sm {
+    --container-max-width: 960px;
+    --section-padding: 90px;
+  }
+
+  //Mobile
+  @include xs {
+    --container-max-width: 720px;
+    --section-padding: 60px;
+    --gap: 10px;
+
+    --header-height: 64px;
+    --button-height: 34px;
+
+    --fs-h1: 56px;
+    --lh-h1: normal;
+
+    --fs-h2: 38px;
+    --lh-h2: 42px;
+
+    --fs-h3: 16px;
+    --lh-h3: 22px;
+
+    --fs-textbutton: 12px;
+    --lh-textbutton: normal;
+
+    --fs-bodytext: 15px;
+    --lh-bodytext: 20px;
+
+    --fs-bodytextsm: 12px;
+    --lh-bodytextsm: normal;
+
+    --fs-nav: 22px;
+    --lh-nav: 1.72px;
+  }
+
+  @include xxs {
+    --container-max-width: 100%;
+  }
+
+  @keyframes jumpInfinite {
+    0% {
+      margin-top: 0;
+    }
+
+    50% {
+      margin-top: 40px;
+    }
+
+    100% {
+      margin-top: 0;
+    }
+  }
+
+  // @keyframes bthLearnmoresplit {
+  //   0% {
+  //     transform: translateX(0%);
+  //   }
+
+  //   50% {
+  //     transform: translateX(60%);
+  //   }
+
+  //   100% {
+  //     transform: translateX(0%);
+  //   }
+  // }
+
+  @keyframes hoverMenuHeader {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes showLoadingBar {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes hideLoadingScreen {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes loadingScreen {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes logoSlide {
+    0% {
+      left: 30px;
+    }
+    100% {
+      left: 120px;
+    }
+  }
+}

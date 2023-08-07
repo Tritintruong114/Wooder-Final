@@ -1,0 +1,251 @@
+.header {
+  color: var(--white-cl);
+  height: var(--header-height);
+  font-family: pr;
+  z-index: 5;
+  width: 100vw;
+  max-width: 100%;
+  position: fixed;
+  // @include transistion;
+  @include disflex;
+  background: linear-gradient(
+    180deg,
+    var(--black-cl) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  .container-fluid {
+    @include disbet;
+    position: relative;
+
+    .header__menu {
+      @include disflex;
+      @include centerAbs;
+
+      position: absolute;
+
+      &-item {
+        @include transistion;
+        position: relative;
+        padding: 0 20px;
+
+        .--active-menu {
+          color: var(--darkYellow-cl);
+
+          &::after {
+            content: "";
+            display: block;
+            height: 2px;
+            background: var(--darkYellow-cl);
+            transform: scale(1);
+            transform-origin: left;
+            opacity: 1;
+          }
+        }
+
+        a {
+          color: var(--white-cl);
+          font-size: var(--fs-textbutton);
+          line-height: 23px;
+          font-family: pb;
+          letter-spacing: 1.5px;
+          display: inline-block;
+          @include transistion;
+          position: relative;
+
+          &:hover {
+            color: var(--darkYellow-cl);
+          }
+
+          &:hover:after {
+            transform: scaleX(1);
+            opacity: 1;
+            @include transistion;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            top: 10px;
+            height: 2px;
+            background: var(--darkYellow-cl);
+            transform: translateX(50%);
+            opacity: 0;
+            @include transistion;
+          }
+        }
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+
+    .header__lang {
+      @include disflex;
+      gap: 2px;
+      font-family: pb;
+      font-size: var(--fs-textbutton);
+      line-height: var(--lh-textbutton);
+      cursor: pointer;
+
+      .select {
+        pointer-events: initial;
+        &.--hiden {
+          // opacity: 0;
+          display: none;
+        }
+        li {
+          @include transistion;
+        }
+
+        li:hover {
+          color: var(--darkYellow-cl);
+        }
+      }
+
+      &:focus {
+        pointer-events: none;
+      }
+
+      .header__lang-current {
+        @include disflex;
+        cursor: pointer;
+        gap: 4px;
+      }
+
+      @include sm {
+        gap: 26px;
+        @include disflex;
+      }
+    }
+  }
+}
+
+.bgBlack {
+  background-color: var(--black-cl);
+}
+
+.nav__menu {
+  @include transistion;
+  @include disflex;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background: var(--black-cl);
+  transform: translateY(-100%);
+  left: 0;
+
+  .hamb {
+    position: absolute;
+    top: 36px;
+    right: 15px;
+  }
+
+  .container {
+    @include disflex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+      display: flex;
+      font-size: var(--fs-nav);
+      line-height: normal;
+
+      a {
+        pointer-events: initial;
+        color: var(--white-cl);
+        @include transistion;
+
+        &:hover {
+          color: var(--darkYellow-cl);
+        }
+      }
+
+      .--active-menu {
+        color: initial;
+        color: var(--darkYellow-cl);
+      }
+    }
+  }
+}
+
+.menu__dropdown {
+  height: 30px;
+  @include disflex;
+  @include transistion;
+
+  .hamb {
+    @include transistion;
+    z-index: 10;
+
+    .hamb-line {
+      background: var(--white-cl);
+      height: 2.5px;
+      width: 24px;
+      content: "";
+      display: none;
+      @include transistion;
+      position: relative;
+
+      &::after {
+        background: var(--white-cl);
+        content: "";
+        display: block;
+        top: -6.25px;
+        position: absolute;
+        height: 2.5px;
+        @include transistion;
+        width: 24px;
+      }
+
+      &::before {
+        background: var(--white-cl);
+        content: "";
+        display: block;
+        top: 6.25px;
+        position: absolute;
+        height: 2.5px;
+        @include transistion;
+        width: 24px;
+      }
+
+      @include sm {
+        display: block;
+      }
+    }
+  }
+
+  &:focus {
+    pointer-events: none;
+  }
+
+  &:focus {
+    .hamb-line {
+      background: transparent;
+      @include transistion;
+
+      &::before {
+        transform: rotate(45deg);
+        top: 0;
+        @include transistion;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        top: 0;
+        @include transistion;
+      }
+    }
+
+    .nav {
+      transform: translateY(-2.5%);
+      top: 6px;
+    }
+  }
+}
+
+.side-menu {
+  display: none;
+}

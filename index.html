@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wooder</title>
+    <link rel="icon" href="./imgs/Favicon.png" />
+    <!-- Meta tag facebook -->
+    <meta property="og:locale" content="en" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Wooder" />
+    <meta property="og:description" content="Find your new Funiture" />
+    <meta property="og:image" content="" />
+
+    <!-- Meta tag twitter -->
+    <meta name="twitter:card" content="" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:title" content="Wooder" />
+    <meta name="twitter:description" content="Find your new Funiture" />
+    <meta name="twitter:image" content="" />
+
+    <!-- Loading -->
+    <style>
+      /* Css Loading here */
+    </style>
+
+    <!-- Style sheet -->
+    <link rel="stylesheet" href="./dest/fonts.css" />
+    <link rel="stylesheet" href="./dest/style.min.css" />
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css" />
+  </head>
+
+  <body class="home">
+    <!-- Header -->
+    <!-- <div class="progressbar">
+  </div> -->
+    <div class="loading">
+      <div class="loading__bar">
+        <div class="loading__bar-inside"></div>
+        <p class="loading__percent">WOODER</p>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container-fluid">
+        <a href="./" class="header__logo">
+          <div>
+            <img class="mobile" src="./imgs/logo-mobile.svg" alt="#" />
+            <img class="desktop" src="./imgs/logo-header.svg" alt="#" />
+          </div>
+        </a>
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a class="--active-menu" href="#">HOME</a>
+          </li>
+          <li class="header__menu-item"><a href="#">PRODUCTS</a></li>
+          <li class="header__menu-item"><a href="#">ABOUT</a></li>
+          <li class="header__menu-item"><a href="#">GALLERY</a></li>
+          <li class="header__menu-item"><a href="#">NEWS</a></li>
+        </ul>
+        <div class="header__lang">
+          <div tabindex="1" class="header__lang-current">
+            <span class="current__text">VI</span>
+            <img src="./imgs/icon-dropdown.svg" class="current__arrow" alt="" />
+            <ul class="select --dropdown --hiden">
+              <li id="lang">VI</li>
+              <li id="lang">JP</li>
+              <li id="lang">AU</li>
+            </ul>
+          </div>
+
+          <div tabindex="1" class="menu__dropdown --showMenu">
+            <input class="side-menu" type="checkbox" id="side-menu" />
+            <label class="hamb" for="side-menu"
+              ><span class="hamb-line"></span
+            ></label>
+            <nav class="nav nav__menu nav__menu-show">
+              <!-- <label class="hamb" for="side-menu"><span class="hamb-line"></span></label> -->
+              <ul class="container">
+                <li><a class="--active-menu" href="">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">News</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+
+    <main class="main">
+      <!-- Hero -->
+      <section class="schero">
+        <!-- Moving slider -->
+        <div class="schero__item-wrap">
+          <div class="slider__item">
+            <div class="slider__item-text">
+              <h1 class="heading --h1 --title-slider">
+                <span class="heading --h1">Wooder</span>
+                <span class="heading --h1">Interior</span>
+                <span class="heading --h1">Design</span>
+              </h1>
+              <a href="#" class="slider__item-learnmore textbutton">
+                Learn More
+                <svg
+                  width="24"
+                  height="10"
+                  viewBox="0 0 24 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrowicon">
+                  <path
+                    d="M22.3174 5.18676L1.00049 5.18676M18.674 9.00006L23.0005 5.18676L18.674 1.37346"
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+            <div class="slider__item-background">
+              <img src="./imgs/img-hero.jpg" alt="hero-img" class="img" />
+              <img src="./imgs/img-hero-2.jpg" alt="hero-img" class="img" />
+              <img src="./imgs/img-hero-3.jpg" alt="hero-img" class="img" />
+            </div>
+          </div>
+        </div>
+        <!-- Fixed -->
+        <div class="schero__bottom">
+          <div class="container-fluid">
+            <div class="schero__bottom-number">
+              <p class="index">01/03</p>
+              <ol class="slick-slider-dots"></ol>
+            </div>
+            <div class="schero__bottom-mouse">
+              <div class="mouse">
+                <svg
+                  width="16"
+                  height="24"
+                  viewBox="0 0 16 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8 4.5C8.19891 4.5 8.38968 4.57902 8.53033 4.71967C8.67098 4.86032 8.75 5.05109 8.75 5.25V8.25C8.75 8.44891 8.67098 8.63968 8.53033 8.78033C8.38968 8.92098 8.19891 9 8 9C7.80109 9 7.61032 8.92098 7.46967 8.78033C7.32902 8.63968 7.25 8.44891 7.25 8.25V5.25C7.25 5.05109 7.32902 4.86032 7.46967 4.71967C7.61032 4.57902 7.80109 4.5 8 4.5ZM14 16.5C14 18.0913 13.3679 19.6174 12.2426 20.7426C11.1174 21.8679 9.5913 22.5 8 22.5C6.4087 22.5 4.88258 21.8679 3.75736 20.7426C2.63214 19.6174 2 18.0913 2 16.5V7.5C2 5.9087 2.63214 4.38258 3.75736 3.25736C4.88258 2.13214 6.4087 1.5 8 1.5C9.5913 1.5 11.1174 2.13214 12.2426 3.25736C13.3679 4.38258 14 5.9087 14 7.5V16.5ZM8 0C6.01088 0 4.10322 0.790176 2.6967 2.1967C1.29018 3.60322 0.5 5.51088 0.5 7.5V16.5C0.5 18.4891 1.29018 20.3968 2.6967 21.8033C4.10322 23.2098 6.01088 24 8 24C9.98912 24 11.8968 23.2098 13.3033 21.8033C14.7098 20.3968 15.5 18.4891 15.5 16.5V7.5C15.5 5.51088 14.7098 3.60322 13.3033 2.1967C11.8968 0.790176 9.98912 0 8 0Z"
+                    fill="white" />
+                </svg>
+              </div>
+              <div class="arrowdown">
+                <svg
+                  width="8"
+                  height="35"
+                  viewBox="0 0 8 35"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M3.89712 33.7354L3.89712 1M1 30.9674L3.89712 34.2544L6.79424 30.9674"
+                    stroke="white"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="schero__bottom-right">
+              <div class="controlbtn --prev slick-next">
+                <svg
+                  width="24"
+                  height="10"
+                  viewBox="0 0 24 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1.68313 4.81336L23 4.81336M5.32651 1.00006L1 4.81336L5.32651 8.62667"
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="controlbtn --next slick-prev">
+                <svg
+                  width="24"
+                  height="10"
+                  viewBox="0 0 24 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M22.3174 5.18676L1.00049 5.18676M18.674 9.00006L23.0005 5.18676L18.674 1.37346"
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services -->
+      <section class="scservices">
+        <div class="container">
+          <div class="scservices__row">
+            <div class="scservices__row-content">
+              <div class="textbox --left">
+                <h2 class="heading --h2 --yellow-left">Furniture</h2>
+                <p class="desc">
+                  Wooder utilizes materials otherwise left behind, rendered
+                  @include transistion; useless in their original intent. By
+                  creating new pieces made one rerclaimed barnwood
+                </p>
+                <a class="btnlearnmore textbutton" href="./">
+                  Learn More
+                  <svg
+                    width="22"
+                    height="11"
+                    viewBox="0 0 22 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M20.4064 5.97153L1.65394 5.97153M17.2013 8.86865L21.0073 5.97153L17.2013 3.07441"
+                      stroke="#BEA67C"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="scservices__row-img">
+              <img src="./imgs/img-service-1.jpg" alt="service" />
+            </div>
+          </div>
+          <div class="scservices__row">
+            <div class="scservices__row-img">
+              <img src="./imgs/img-service-2.jpg" alt="service" />
+            </div>
+            <div class="scservices__row-content">
+              <div class="textbox --right">
+                <h2 class="heading --h2 --yellow-right">Decor</h2>
+                <p class="desc">
+                  We make all types of wooden decor as per design given by
+                  Architect,Interior designer, contractor which is suitable your
+                  premises.
+                </p>
+                <a class="btnlearnmore textbutton" href="./">
+                  Learn More<svg
+                    width="22"
+                    height="11"
+                    viewBox="0 0 22 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M20.4064 5.97153L1.65394 5.97153M17.2013 8.86865L21.0073 5.97153L17.2013 3.07441"
+                      stroke="#BEA67C"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Videos -->
+      <section class="scvideos">
+        <div class="container">
+          <div class="popup">
+            <div class="popup__cointainer">
+              <svg
+                class="x-icon"
+                width="19"
+                height="19"
+                viewBox="0 0 19 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect
+                  y="16.9707"
+                  width="24"
+                  height="2.5"
+                  transform="rotate(-45 0 16.9707)"
+                  fill="white" />
+                <rect
+                  x="1.76782"
+                  width="24"
+                  height="2.5"
+                  transform="rotate(45 1.76782 0)"
+                  fill="white" />
+              </svg>
+              <div class="video__cointainer"></div>
+            </div>
+          </div>
+          <div class="textbox">
+            <h2 class="heading --h2 --yellow-bottom">wooder – is quality</h2>
+            <p class="desc --hiden">
+              We create unique design objects made of rare wood, specially under
+              the order. Look at the short video about our work.
+            </p>
+            <p class="desc">
+              Wooder utilizes materials otherwise left behind, rendered useless
+              in their original intent. By creating new pieces made rerclaimed
+              barnwood rendered useless in their original intent.
+            </p>
+          </div>
+          <div class="scvideos_list">
+            <div class="scvideos__item">
+              <div class="scvideos__item-img">
+                <img src="./imgs/img-video-1.jpg" alt="video" />
+                <div data-video-id="6_0FgEvNz08" class="playicon">
+                  <svg
+                    width="52"
+                    height="53"
+                    viewBox="0 0 52 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="playicon__round">
+                    <rect
+                      opacity="0.8"
+                      class="show"
+                      y="0.5"
+                      width="52"
+                      height="52"
+                      rx="26"
+                      fill="#BEA67C" />
+                  </svg>
+                  <svg
+                    width="17"
+                    height="20"
+                    viewBox="0 0 17 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="playicon__play">
+                    <path
+                      d="M16.208 8.75302L2.27347 0.70784C1.84752 0.46197 1.32349 0.46197 0.897012 0.70784C0.471746 0.953538 0.209473 1.40816 0.209473 1.89973V17.9897C0.209473 18.4815 0.472264 18.9358 0.897012 19.1811C1.11042 19.3042 1.34766 19.3653 1.58524 19.3653C1.82248 19.3653 2.06024 19.3042 2.27296 19.1811L16.2075 11.1361C16.6332 10.8906 16.8953 10.4361 16.8953 9.94473C16.8962 9.45334 16.6336 8.99906 16.208 8.75302Z"
+                      fill="white" />
+                  </svg>
+                </div>
+              </div>
+              <p class="bodytext">Innovative Design</p>
+            </div>
+            <div class="scvideos__item">
+              <div class="scvideos__item-img">
+                <img src="./imgs/img-video-2.jpg" alt="video" />
+                <div data-video-id="egNuC8zyAFc" class="playicon">
+                  <svg
+                    width="52"
+                    height="53"
+                    viewBox="0 0 52 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="playicon__round">
+                    <rect
+                      class="show"
+                      opacity="0.8"
+                      y="0.5"
+                      width="52"
+                      height="52"
+                      rx="26"
+                      fill="#BEA67C" />
+                  </svg>
+                  <svg
+                    width="17"
+                    height="20"
+                    viewBox="0 0 17 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="playicon__play">
+                    <path
+                      d="M16.208 8.75302L2.27347 0.70784C1.84752 0.46197 1.32349 0.46197 0.897012 0.70784C0.471746 0.953538 0.209473 1.40816 0.209473 1.89973V17.9897C0.209473 18.4815 0.472264 18.9358 0.897012 19.1811C1.11042 19.3042 1.34766 19.3653 1.58524 19.3653C1.82248 19.3653 2.06024 19.3042 2.27296 19.1811L16.2075 11.1361C16.6332 10.8906 16.8953 10.4361 16.8953 9.94473C16.8962 9.45334 16.6336 8.99906 16.208 8.75302Z"
+                      fill="white" />
+                  </svg>
+                </div>
+              </div>
+              <p class="bodytext">High-level Skills</p>
+            </div>
+            <div class="scvideos__item">
+              <div class="scvideos__item-img">
+                <img src="./imgs/img-video-3.jpg" alt="video" />
+                <div data-video-id="91F29CtMs1s" class="playicon">
+                  <svg
+                    width="52"
+                    height="53"
+                    viewBox="0 0 52 53"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="playicon__round">
+                    <rect
+                      opacity="0.8"
+                      y="0.5"
+                      class="show"
+                      width="52"
+                      height="52"
+                      rx="26"
+                      fill="#BEA67C" />
+                  </svg>
+                  <svg
+                    width="17"
+                    height="20"
+                    viewBox="0 0 17 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="playicon__play">
+                    <path
+                      d="M16.208 8.75302L2.27347 0.70784C1.84752 0.46197 1.32349 0.46197 0.897012 0.70784C0.471746 0.953538 0.209473 1.40816 0.209473 1.89973V17.9897C0.209473 18.4815 0.472264 18.9358 0.897012 19.1811C1.11042 19.3042 1.34766 19.3653 1.58524 19.3653C1.82248 19.3653 2.06024 19.3042 2.27296 19.1811L16.2075 11.1361C16.6332 10.8906 16.8953 10.4361 16.8953 9.94473C16.8962 9.45334 16.6336 8.99906 16.208 8.75302Z"
+                      fill="white" />
+                  </svg>
+                </div>
+              </div>
+              <p class="bodytext">Quality Products</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Description -->
+      <section
+        class="scdescription"
+        style="
+          background-image: url('./imgs/img-woods.jpg');
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+          background-size: cover;
+        ">
+        <div class="container">
+          <div class="textbox">
+            <h2 class="heading --h2">We Do the design of any complexity</h2>
+            <p class="desc">
+              Wooder utilizes materials otherwise left behind, rendered useless
+              in their original intent. By creating new pieces made o.rerclaimed
+              barnwood
+            </p>
+            <div data-video-id="6_0FgEvNz08" class="btnwacth textbutton">
+              <svg
+                width="19"
+                height="18"
+                viewBox="0 0 19 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.0059 9.10593L8.4336 6.4661C8.29383 6.38542 8.12188 6.38542 7.98195 6.4661C7.84241 6.54672 7.75635 6.69589 7.75635 6.85719V12.1367C7.75635 12.2981 7.84258 12.4471 7.98195 12.5276C8.05197 12.568 8.12982 12.5881 8.20777 12.5881C8.28562 12.5881 8.36363 12.568 8.43343 12.5276L13.0057 9.88787C13.1454 9.80731 13.2314 9.6582 13.2314 9.49696C13.2317 9.33572 13.1455 9.18666 13.0059 9.10593Z"
+                  fill="white" />
+                <circle cx="9.75" cy="9" r="8.5" stroke="white" />
+              </svg>
+              Watch video
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Us -->
+      <section class="scaboutus">
+        <div class="container">
+          <div class="scservices__row">
+            <div class="scservices__row-img">
+              <img src="./imgs/img-about.jpg" alt="service" />
+            </div>
+            <div class="scservices__row-content">
+              <div class="textbox --left">
+                <h2 class="heading --h2 --yellow-left">About Us</h2>
+                <p class="desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <p class="desc --hiden">
+                  We are a team of professionals in the wood processing and the
+                  creation of wooden lorem.of the highest class.
+                </p>
+                <a class="btnlearnmore textbutton" href="./">
+                  Learn More<svg
+                    width="22"
+                    height="11"
+                    viewBox="0 0 22 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M20.4064 5.97153L1.65394 5.97153M17.2013 8.86865L21.0073 5.97153L17.2013 3.07441"
+                      stroke="#BEA67C"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section class="scgallery">
+        <div class="container">
+          <div class="textbox">
+            <h2 class="heading --h2">Gallery</h2>
+            <p class="desc">
+              We are a team of professionals in the wood processing and the
+              creation of wooden furniture of the highest class
+            </p>
+          </div>
+          <div class="scgallery__galleries">
+            <div class="scgallery__galleries-item">
+              <img src="./imgs/gallary-1.jpg" alt="galleries" />
+            </div>
+            <div class="scgallery__galleries-item">
+              <img src="./imgs/gallary-2.jpg" alt="galleries" />
+            </div>
+            <div class="scgallery__galleries-item">
+              <img src="./imgs/gallary-3.jpg" alt="galleries" />
+            </div>
+            <div class="scgallery__galleries-item">
+              <img src="./imgs/gallary-4.jpg" alt="galleries" />
+            </div>
+            <div class="scgallery__galleries-item">
+              <img src="./imgs/gallary-5.jpg" alt="galleries" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- News -->
+      <section class="scnews">
+        <div class="container">
+          <div class="textbox">
+            <h2 class="heading --h2">NEWS</h2>
+            <p class="desc">
+              We are a team of professionals in the wood processing and the
+              creation of wooden furniture of the highest class
+            </p>
+          </div>
+          <div class="scnews__filterbtn">
+            <div class="tab --active">ALL</div>
+            <div class="tab">Technology</div>
+            <div class="tab">Fashion</div>
+          </div>
+          <div class="scnews__posts">
+            <figure class="scnews__posts-post">
+              <a href="./" class="img">
+                <img src="./imgs/img-new1.jpg" alt="new1" />
+              </a>
+              <div class="content">
+                <h3 class="heading --h3">
+                  <a href="#">Where does it come from? </a>
+                </h3>
+                <p class="desc">
+                  Contrary to popular belief, Lorem Ipsum is not simply random
+                  text. It has roots in a piece of classical Latin literatur
+                  roots in a piece of...
+                </p>
+              </div>
+            </figure>
+            <figure class="scnews__posts-post">
+              <a href="./" class="img">
+                <img src="./imgs/img-new2.jpg" alt="new1" />
+              </a>
+              <div class="content">
+                <h3 class="heading --h3">
+                  <a href="#">There are many variations of passages</a>
+                </h3>
+                <p class="desc">
+                  Contrary to popular belief, Lorem Ipsum is not simply random
+                  text. It has roots in a piece of classical Latin literatur
+                  roots in a piece of...
+                </p>
+              </div>
+            </figure>
+            <figure class="scnews__posts-post">
+              <a href="./" class="img">
+                <img src="./imgs/img-new3.jpg" alt="new1" />
+              </a>
+              <div class="content">
+                <h3 class="heading --h3">
+                  <a href="#"
+                    >It is a long established fact that a reader It has roots in
+                    a piece of</a
+                  >
+                </h3>
+                <p class="desc">
+                  Contrary to popular belief, Lorem Ipsum is not simply random
+                  text. It has roots in a piece of classical Latin literatur
+                  roots in a piece of...
+                </p>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lists -->
+      <section class="scbottomlist">
+        <div class="scbottomlist__slider">
+          <img src="./imgs/img-silder1.jpg" alt="" />
+          <img src="./imgs/img-silder2.jpg" alt="" />
+          <img src="./imgs/img-silder3.jpg" alt="" />
+          <img src="./imgs/img-silder7.jpg" alt="" />
+          <img src="./imgs/img-silder5.png" alt="" />
+          <img src="./imgs/img-silder6.jpg" alt="" />
+          <img src="./imgs/img-silder7.jpg" alt="" />
+        </div>
+        <div class="scbottomlist__progress">
+          <div class="scbottomlist__progress-bar"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__res --hiden">
+          <a class="footer__logo-res" href="./">
+            <img src="./imgs/logo-header.svg" alt="" />
+          </a>
+          <p class="footer__copyright-res">© 2023 WOODER, CFD Circle</p>
+        </div>
+
+        <p class="footer__copyright">© 2023 WOODER, CFD Circle</p>
+        <a class="footer__logo" href="./">
+          <img src="./imgs/logo-header.svg" alt="" />
+        </a>
+        <div class="footer__totopbtn">
+          <div class="progressbar"></div>
+          <svg
+            width="7"
+            height="15"
+            viewBox="0 0 7 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M3.49992 0.934721L3.49992 14.5M5.83325 3.25323L3.49992 0.5L1.16659 3.25323"
+              stroke="white"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/libs/main.js"></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+  </body>
+</html>
