@@ -120,7 +120,6 @@ window.onload = function () {
   // document.querySelector(".loading").classList.add("--hiden");
 
   //Slider on Gallery Bottom
-  
 };
 
 //Back to top button
@@ -147,9 +146,11 @@ turnOff.addEventListener("click", (e) => {
 
 document.addEventListener("click", () => {
   if (dropDown.classList.contains("--hiden")) {
-    return;
+    dropDown.classList.add("--hiden");
+    console.log("ABC");
+  } else {
+    dropDown.classList.add("--hiden");
   }
-  dropDown.classList.remove("--hiden");
   // dropDown.classList.remove("--hiden");
 });
 
