@@ -147,6 +147,7 @@ turnOff.addEventListener("click", (e) => {
 document.addEventListener("click", () => {
   if (dropDown.classList.contains("--hiden")) {
     dropDown.classList.add("--hiden");
+    console.log("ABC");
   } else {
     dropDown.classList.add("--hiden");
   }
@@ -225,26 +226,3 @@ showVideo.forEach(function (item) {
 //     };
 //   }
 // };
-
-//Scroll to section
-let menus = document.querySelectorAll(".header .header__menu li a");
-let heightHeader = document.querySelector(".header").offsetHeight;
-
-const removeActive = () => {
-  menus.forEach((menu_element, menu_index) => {
-    menu_element.classList.remove("--active-menu");
-  });
-};
-menus.forEach((element, index) => {
-  element.addEventListener("click", (e) => {
-    e.preventDefault();
-    let className = element.getAttribute("href").replace("#", "");
-    let section = document.querySelector("." + className);
-    let positionSection = section.offsetTop - heightHeader;
-    window.scrollTo({ top: positionSection, behavior: "smooth" });
-    menus.forEach((menu_element, menu_index) => {
-      menu_element.classList.remove("--active-menu");
-    });
-    element.classList.add("--active-menu");
-  });
-});
