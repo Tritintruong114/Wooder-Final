@@ -147,7 +147,6 @@ turnOff.addEventListener("click", (e) => {
 document.addEventListener("click", () => {
   if (dropDown.classList.contains("--hiden")) {
     dropDown.classList.add("--hiden");
-    console.log("ABC");
   } else {
     dropDown.classList.add("--hiden");
   }
@@ -207,22 +206,31 @@ showVideo.forEach(function (item) {
 
 // LOading screen
 
-// const move = () => {
-//   if (i == 0) {
-//     i = 1;
-//     let progress = document.querySelector(".loading__bar-inside");
-//     let percent = document.querySelector(".loading__percent");
-//     let width = 10;
-//     let id = setInterval(frame, 10);
-//     const frame = () => {
-//       if (width >= 100) {
-//         clearInterval(id);
-//         i = 0;
-//       } else {
-//         width++;
-//         progress.style.width = width + "%";
-//         percent.innerHTML = width + "%";
-//       }
-//     };
-//   }
-// };
+//Scroll to section
+let menus = document.querySelectorAll(".header .header__menu li a");
+let heightHeader = document.querySelector(".header").offsetHeight;
+
+const removeActive = () => {
+  menus.forEach((menu_element, menu_index) => {
+    menu_element.classList.remove("--active-menu");
+  });
+};
+menus.forEach((element, index) => {
+  element.addEventListener("click", (e) => {
+    e.preventDefault();
+    let className = element.getAttribute("href").replace("#", "");
+    let section = document.querySelector("." + className);
+    let positionSection = section.offsetTop - heightHeader;
+    window.scrollTo({ top: positionSection, behavior: "smooth" });
+    menus.forEach((menu_element, menu_index) => {
+      menu_element.classList.remove("--active-menu");
+    });
+    element.classList.add("--active-menu");
+  });
+});
+
+// Fancybox.bind('[data-fancybox="gallery"]', {
+//   // Your custom options
+
+//   loop: true,
+// });
