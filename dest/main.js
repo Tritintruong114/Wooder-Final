@@ -7,6 +7,9 @@ const slideCount = document.querySelector(".index");
 const titleSlider = document.querySelector(".--title-slider");
 
 //Header background change
+
+let loadedCount = 0;
+
 window.addEventListener("scroll", () => {
   let y = window.scrollY;
   let heightOfHero = triggerButton.offsetHeight; //Height of sc Hero
@@ -31,93 +34,92 @@ window.addEventListener("scroll", () => {
 //Loading screen
 
 //Slick
-let i = 0;
+const initLoading = () => {
+  let imgs = document.querySelectorAll("img").length;
+  let container = document.querySelector("body");
+  let progress = document.querySelector(".loading__bar-inside");
+  let percent = document.querySelector(".loading__percent");
+  let imgLoaded = imagesLoaded(container);
+
+  imgLoaded.on("progress", (instance) => {
+    loadedCount++;
+    progress.style.width = loadedCount + "%";
+    percent.textContent = Math.floor((loadedCount / imgs) * 100) + "%";
+    console.log(percent.innerHTML);
+  });
+};
+
 window.onload = function () {
-  if (i == 0) {
-    i = 1;
-    let progress = document.querySelector(".loading__bar-inside");
-    let percent = document.querySelector(".loading__percent");
-    let width = 10;
+  if (loadedCount == 0) {
+    initLoading();
 
-    const frame = () => {
-      if (width >= 100) {
-        clearInterval(id);
-        i = 0;
-        document.querySelector(".loading").classList.add("--hiden");
-        $(".scbottomlist__slider").slick({
-          infinite: true,
-          speed: 150,
-          slidesToShow: 1,
-          variableWidth: true,
-          autoplay: true,
-          dots: false,
-          arrows: false,
-        });
-        $(".scbottomlist").on(
-          "init reInit afterChange",
-          function (event, slick, currentSlide) {
-            const exChangeToPercent =
-              (slick.currentSlide / slick.slideCount) * 100 + 10;
-            const numSlides = `${exChangeToPercent}%`;
-            document.querySelector(".scbottomlist__progress-bar").style.width =
-              numSlides;
-          }
-        );
-        //Slider on SC Hero
-        $(".slider__item-background").slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          autoplaySpeed: 1500,
-          // autoplay: true,
-          dots: true,
-          appendDots: $(".slick-slider-dots"),
-          prevArrow: true,
-          nextArrow: true,
-
-          //asNavFor to Sync 2 slider
-          asNavFor: ".--title-slider",
-        });
-        $(".--title-slider").slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          autoplaySpeed: 1500,
-          autoplay: true,
-          dots: false,
-          arrows: false,
-
-          //asNavFor to Sync 2 slider
-          asNavFor: ".slider__item-background",
-        });
-        $(".slick-next").click(function (e) {
-          //e.preventDefault();
-          $(".slider__item-background").slick("slickPrev");
-        });
-
-        $(".slick-prev").click(function (e) {
-          //e.preventDefault();
-          $(".slider__item-background").slick("slickNext");
-        });
-
-        $(".slider__item-background").on(
-          "init reInit afterChange",
-          function (event, slick, currentSlide, nextSlide) {
-            if (!slick.$dots) {
-              return;
-            }
-            let i = (currentSlide ? currentSlide : 0) + 1;
-
-            slideCount.innerHTML = "";
-            slideCount.innerHTML = `0${i}/0${slick.$dots[0].children.length}`;
-          }
-        );
-      } else {
-        width++;
-        progress.style.width = width + "%";
-        percent.textContent = width + "%";
+    document.querySelector(".loading").classList.add("--hiden");
+    $(".scbottomlist__slider").slick({
+      infinite: true,
+      speed: 150,
+      slidesToShow: 1,
+      variableWidth: true,
+      autoplay: true,
+      dots: false,
+      arrows: false,
+    });
+    $(".scbottomlist").on(
+      "init reInit afterChange",
+      function (event, slick, currentSlide) {
+        const exChangeToPercent =
+          (slick.currentSlide / slick.slideCount) * 100 + 10;
+        const numSlides = `${exChangeToPercent}%`;
+        document.querySelector(".scbottomlist__progress-bar").style.width =
+          numSlides;
       }
-    };
+    );
+    //Slider on SC Hero
+    $(".slider__item-background").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplaySpeed: 1500,
+      // autoplay: true,
+      dots: true,
+      appendDots: $(".slick-slider-dots"),
+      prevArrow: true,
+      nextArrow: true,
 
-    let id = setInterval(frame, 20);
+      //asNavFor to Sync 2 slider
+      asNavFor: ".--title-slider",
+    });
+    $(".--title-slider").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplaySpeed: 1500,
+      autoplay: true,
+      dots: false,
+      arrows: false,
+
+      //asNavFor to Sync 2 slider
+      asNavFor: ".slider__item-background",
+    });
+    $(".slick-next").click(function (e) {
+      //e.preventDefault();
+      $(".slider__item-background").slick("slickPrev");
+    });
+
+    $(".slick-prev").click(function (e) {
+      //e.preventDefault();
+      $(".slider__item-background").slick("slickNext");
+    });
+
+    $(".slider__item-background").on(
+      "init reInit afterChange",
+      function (event, slick, currentSlide, nextSlide) {
+        if (!slick.$dots) {
+          return;
+        }
+        let i = (currentSlide ? currentSlide : 0) + 1;
+
+        slideCount.innerHTML = "";
+        slideCount.innerHTML = `0${i}/0${slick.$dots[0].children.length}`;
+      }
+    );
   }
 };
 
@@ -252,3 +254,5 @@ const handleTabsNews = () => {
 };
 
 handleTabsNews();
+
+//Image loaded
