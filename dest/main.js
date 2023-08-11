@@ -34,8 +34,8 @@ window.addEventListener("scroll", () => {
 //Loading screen
 
 //Slick
+let imgs = document.querySelectorAll("img").length;
 const initLoading = () => {
-  let imgs = document.querySelectorAll("img").length;
   let container = document.querySelector("body");
   let progress = document.querySelector(".loading__bar-inside");
   let percent = document.querySelector(".loading__percent");
@@ -52,7 +52,7 @@ const initLoading = () => {
 window.onload = function () {
   if (loadedCount == 0) {
     initLoading();
-
+  } else {
     document.querySelector(".loading").classList.add("--hiden");
     $(".scbottomlist__slider").slick({
       infinite: true,
