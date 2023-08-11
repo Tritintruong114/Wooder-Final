@@ -26,6 +26,7 @@ window.addEventListener("scroll", () => {
     document.documentElement.clientHeight;
   const scrolled = (scroll / progress) * 100;
   document.querySelector(".progressbar").style.height = scrolled + "%";
+  document.querySelector(".progress").style.width = scrolled + "%";
 });
 //Loading screen
 
@@ -227,3 +228,27 @@ menus.forEach((element, index) => {
     element.classList.add("--active-menu");
   });
 });
+
+const handleTabsNews = () => {
+  let tabs = document.querySelectorAll(".tab");
+  let news = document.querySelectorAll(".scnews__posts");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((tab) => {
+        tab.classList.remove("--active");
+      });
+      tab.classList.add("--active");
+
+      news.forEach(function (newlist) {
+        newlist.classList.remove("active");
+      });
+
+      let id = tab.dataset.tab;
+
+      document.querySelector(`.scnews__posts${id}`).classList.add("active");
+    });
+  });
+};
+
+handleTabsNews();
