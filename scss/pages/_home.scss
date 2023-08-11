@@ -443,10 +443,27 @@
     }
 
     .scnews__posts {
-      display: grid;
+      // display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 28px;
+      display: none;
+      .img {
+        position: relative;
+        overflow: hidden;
 
+        img {
+          width: 100%;
+          object-fit: cover;
+          height: auto;
+          transition: var(--time-duration);
+        }
+
+        &:hover {
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
       .scnews__posts-post {
         display: grid;
         gap: 17px;
@@ -551,25 +568,9 @@
           }
         }
       }
-    }
 
-    .scnews__posts {
-      .img {
-        position: relative;
-        overflow: hidden;
-
-        img {
-          width: 100%;
-          object-fit: cover;
-          height: auto;
-          transition: var(--time-duration);
-        }
-
-        &:hover {
-          img {
-            transform: scale(1.2);
-          }
-        }
+      &.active {
+        display: grid;
       }
     }
   }

@@ -37,6 +37,7 @@ window.onload = function () {
     let progress = document.querySelector(".loading__bar-inside");
     let percent = document.querySelector(".loading__percent");
     let width = 10;
+
     const frame = () => {
       if (width >= 100) {
         clearInterval(id);
@@ -61,13 +62,12 @@ window.onload = function () {
               numSlides;
           }
         );
-
         //Slider on SC Hero
         $(".slider__item-background").slick({
           slidesToShow: 1,
           slidesToScroll: 1,
           autoplaySpeed: 1500,
-          autoplay: true,
+          // autoplay: true,
           dots: true,
           appendDots: $(".slick-slider-dots"),
           prevArrow: true,
@@ -115,11 +115,9 @@ window.onload = function () {
         percent.textContent = width + "%";
       }
     };
+
     let id = setInterval(frame, 20);
   }
-  // document.querySelector(".loading").classList.add("--hiden");
-
-  //Slider on Gallery Bottom
 };
 
 //Back to top button
@@ -193,6 +191,7 @@ showVideo.forEach(function (item) {
     popUpVideo.classList.add("--showPopup");
     videoContainer.innerHTML = `
              <iframe
+                class="iframe"
                 src="https://www.youtube.com/embed/${idYoutube}?&autoplay=1"
                 title="YouTube video player"
                 frameborder="0"
@@ -228,9 +227,3 @@ menus.forEach((element, index) => {
     element.classList.add("--active-menu");
   });
 });
-
-// Fancybox.bind('[data-fancybox="gallery"]', {
-//   // Your custom options
-
-//   loop: true,
-// });
