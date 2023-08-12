@@ -45,26 +45,40 @@ imagesLoaded(document.querySelector("body"), function (instance) {
           clearInterval(id);
           i = 0;
           document.querySelector(".loading").classList.add("--hiden");
-          $(".scbottomlist__slider").slick({
-            infinite: true,
-            speed: 150,
-            slidesToShow: 1,
-            variableWidth: true,
-            autoplay: true,
-            dots: false,
-            arrows: false,
+          // $(".scbottomlist__slider").slick({
+          //   infinite: true,
+          //   speed: 150,
+          //   slidesToShow: 1,
+          //   variableWidth: true,
+          //   // autoplay: true,
+          //   dots: false,
+          //   arrows: false,
+          // });
+          // $(".scbottomlist").on(
+          //   "init reInit afterChange",
+          //   function (event, slick, currentSlide) {
+          //     const exChangeToPercent =
+          //       (slick.currentSlide / slick.slideCount) * 100 + 10;
+          //     const numSlides = `${exChangeToPercent}%`;
+          //     document.querySelector(
+          //       ".scbottomlist__progress-bar"
+          //     ).style.width = numSlides;
+          //   }
+          // );
+          $(".scbottomlist__slider").flickity({
+            cellAlign: "left",
+            freeScroll: true,
+            prevNextButtons: false,
+            pageDots: false,
+            wrapAround: true,
           });
-          $(".scbottomlist").on(
-            "init reInit afterChange",
-            function (event, slick, currentSlide) {
-              const exChangeToPercent =
-                (slick.currentSlide / slick.slideCount) * 100 + 10;
-              const numSlides = `${exChangeToPercent}%`;
-              document.querySelector(
-                ".scbottomlist__progress-bar"
-              ).style.width = numSlides;
-            }
-          );
+          let flkty = new Flickity(".scbottomlist__slider");
+          flkty.on("scroll", (event) => {
+            progress = Math.max(0, Math.min(1, event));
+            document.querySelector(
+              ".scbottomlist__progress-bar"
+            ).style.width = `${progress * 100}%`;
+          });
           //Slider on SC Hero
           $(".slider__item-background").slick({
             slidesToShow: 1,
@@ -343,3 +357,5 @@ const handleTabsNews = () => {
 };
 
 handleTabsNews();
+
+//Free scroll  - Flickity
