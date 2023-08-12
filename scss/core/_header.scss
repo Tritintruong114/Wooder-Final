@@ -137,7 +137,7 @@
     top: 0;
     left: 0;
 
-    @include sm {
+    @include md {
       display: none;
     }
   }
@@ -262,6 +262,9 @@
     .nav {
       transform: translateY(-2.5%);
       top: 6px;
+      &.--hiden {
+        display: none;
+      }
     }
   }
 }
