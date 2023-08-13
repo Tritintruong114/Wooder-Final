@@ -1,5 +1,6 @@
 // Hero
 .home {
+  @include transistion;
   // position: relative;
   .schero {
     height: 100vh;
@@ -655,6 +656,85 @@
     }
   }
 
+  //Accordion
+  .scaccordion {
+    background: var(--black-cl);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    @include disflex;
+    .container {
+      @include disflex;
+      flex-direction: column;
+
+      .textbox {
+        max-width: 900px;
+        width: 100%;
+        display: grid;
+        background: var(--black-cl);
+        overflow: hidden;
+        .heading {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          font-size: var(--fs-h3);
+          padding: 0px 12px;
+          opacity: 1;
+          background-color: var(--white-cl);
+          @include transistion;
+          cursor: pointer;
+          margin-bottom: 2px;
+          &:hover {
+            background: var(--darkYellow-cl);
+            color: var(--white-cl);
+            svg {
+              fill: var(--white-cl);
+            }
+          }
+          @include sm {
+            font-size: 18px;
+          }
+          svg {
+            @include transistion;
+          }
+        }
+        .desc {
+          margin-bottom: 0;
+          max-height: 0;
+          transition: 0.3s;
+        }
+        &.--active {
+          .heading {
+            background: var(--darkYellow-cl);
+            color: var(--white-cl);
+            svg {
+              transform: rotate(90deg);
+              fill: var(--white-cl);
+            }
+          }
+          .desc {
+            margin-bottom: 2px;
+            display: grid;
+            background: var(--white-cl);
+            color: var(--black-cl);
+            padding: 12px 12px;
+            max-height: 100vh;
+          }
+        }
+      }
+      .--title {
+        color: var(--white-cl);
+        position: relative;
+        @include disflex;
+      }
+      .--accoradion {
+        margin-top: 10px;
+        color: var(--white-cl);
+        max-width: 600px;
+        text-align: center;
+      }
+    }
+  }
   //Descript
   .scdescription {
     @include disflex;

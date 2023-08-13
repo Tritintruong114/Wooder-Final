@@ -145,10 +145,8 @@ turnOff.addEventListener("click", (e) => {
 document.addEventListener("click", () => {
   if (dropDown.classList.contains("--hiden")) {
     dropDown.classList.add("--hiden");
-    console.log("true");
   } else {
     dropDown.classList.add("--hiden");
-    console.log("false");
   }
 });
 const myFunction = (item, index) => {
@@ -255,3 +253,33 @@ const handleTabsNews = () => {
 };
 
 handleTabsNews();
+
+//Accordion
+let accElements = document.querySelectorAll(".acc");
+
+accElements.forEach((element, index) => {
+  element.addEventListener("click", () => {
+    if (element.classList.contains("--active")) {
+      element.classList.toggle("--active");
+    } else {
+      accElements.forEach((el) => {
+        if (el.classList.contains("--active")) {
+          el.classList.remove("--active");
+        }
+      });
+      element.classList.add("--active");
+    }
+    //   accElements.forEach((element) => {
+    //     element.classList.remove("--active");
+    //   });
+    //   console.log(1);
+    //   if (element.classList.contains("--active")) {
+    //     element.classList.toggle("--active");
+    //     console.log(2);
+    //   } else {
+    //     element.classList.toggle("--active");
+    //     console.log(3);
+    //   }
+    // });
+  });
+});
